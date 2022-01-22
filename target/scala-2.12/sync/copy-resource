@@ -1,0 +1,1 @@
+[[{"${BASE}/src/main/resources/index.html":["${BASE}/target/scala-2.12/classes/index.html"]},{"${BASE}/target/scala-2.12/classes/index.html":["${BASE}/src/main/resources/index.html"]}],{"${BASE}/src/main/resources/index.html":{"file":"file:///Users/kpolunin/Documents/Sources/ETL-UI/spark-k8s-setup/src/main/resources/index.html","lastModified":1642841341257}}]

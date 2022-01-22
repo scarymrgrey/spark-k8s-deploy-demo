@@ -1,0 +1,2341 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://minikube.sigs.k8s.io/docs/start/ -->
+<html lang="en" class="no-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.83.1"><link rel="alternate" type="application/rss+xml" href="https://minikube.sigs.k8s.io/docs/start/index.xml">
+<meta name="ROBOTS" content="INDEX, FOLLOW">
+
+
+<link rel="shortcut icon" href="https://minikube.sigs.k8s.io/favicons/favicon.ico">
+<link rel="apple-touch-icon" href="https://minikube.sigs.k8s.io/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="https://minikube.sigs.k8s.io/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="https://minikube.sigs.k8s.io/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://minikube.sigs.k8s.io/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="https://minikube.sigs.k8s.io/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="https://minikube.sigs.k8s.io/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="https://minikube.sigs.k8s.io/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="https://minikube.sigs.k8s.io/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="https://minikube.sigs.k8s.io/favicons/android-192x192.png" sizes="192x192">
+
+<title>minikube start | minikube</title><meta property="og:title" content="minikube start">
+<meta property="og:description" content="minikube is local Kubernetes">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://minikube.sigs.k8s.io/docs/start/"><meta property="og:site_name" content="minikube">
+
+<meta itemprop="name" content="minikube start">
+<meta itemprop="description" content="minikube is local Kubernetes"><meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="minikube start">
+<meta name="twitter:description" content="minikube is local Kubernetes">
+
+
+
+
+
+
+
+<link rel="preload" href="./minikube start _ minikube_files/main.min.4e2a111ca76e0908c30b2d5004f6fe749a8e96ee899a066812770e4614786e2a.css" as="style">
+<link href="./minikube start _ minikube_files/main.min.4e2a111ca76e0908c30b2d5004f6fe749a8e96ee899a066812770e4614786e2a.css" rel="stylesheet" integrity="">
+
+
+<script src="./minikube start _ minikube_files/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+<script src="./minikube start _ minikube_files/lunr.min.js" integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY" crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="./minikube start _ minikube_files/prism.css">
+
+
+<link href="./minikube start _ minikube_files/css2" rel="stylesheet">
+<link href="./minikube start _ minikube_files/tabs.css" rel="stylesheet">
+<script src="./minikube start _ minikube_files/tabs.js"></script>
+<script src="./minikube start _ minikube_files/quiz.js"></script>
+
+
+
+  <script src="./minikube start _ minikube_files/clipboard.min.js"></script></head>
+  <body class="td-section">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="https://minikube.sigs.k8s.io/">
+		<span class="navbar-logo"><svg width="702" height="683" viewBox="0 0 702 683" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>minikube</title><desc>Created with Sketch.</desc><defs><polygon id="path-1" points="701.060294 684.263047 701.060294 1.59247059 0 1.59247059 0 684.263047"></polygon></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="minikube" transform="translate(0.000000, -4.000000)"><g id="border" transform="translate(0.000000, 2.554588)"><mask id="mask-2" fill="#fff"><use xlink:href="#path-1"></use></mask><g id="Clip-2"></g><path d="M351.210679 1.59081176c-9.51750000000004.0-19.039147 2.26844118-28.104617 6.345L93.7363853 117.637959C75.6012971 126.247253 62.9112971 142.1139 58.3785618 161.605076L1.71315 407.749606c-4.53273529 19.491176.0 39.438529 12.6941471 55.305176L173.061326 660.239135c12.242118 15.414618 30.825089 24.023912 50.316265 24.023912H477.683532C497.174709 684.263047 515.757679 675.653753 527.999797 660.239135L686.653826 463.054782c12.694148-15.414617 17.226883-35.814 12.694148-55.305176L642.682562 161.605076C638.149826 142.1139 625.459826 126.247253 607.324738 117.637959L378.863268 7.93581176c-8.61344200000002-4.07655882-18.135089-6.345-27.652589-6.345m0 21.30344114c6.34499999999997.0 12.694147 1.3602353 18.587118 4.0807059L599.167474 136.220929C610.953415 142.1139 620.018885 152.995782 622.739356 165.685782l56.661265 246.14453C682.573121 424.976488 679.400621 438.574694 670.787179 449.0004L512.13315 646.1889C503.971738 656.614606 491.281738 662.507576 478.135562 662.507576H223.833768c-13.146177.0-25.840324-5.89296999999999-33.997589-16.318676L31.1780029 449.0004c-8.1572647-10.425706-11.3297647-24.023912-8.6134411-37.170088l56.6654117-246.14453c3.1725-13.146176 11.7859412-24.023911 23.5718825-29.464853L332.171532 26.5229294C338.064503 24.2544882 344.865679 22.8942529 351.210679 22.8942529" id="Fill-1" fill="#326de6" mask="url(#mask-2)"></path></g><path d="M218.498162 607.501403C226.630544 617.711462 238.827044 623.347315 251.558515 623.347315L451.127426 622.994815c12.735618.0 24.803559-5.98835299999996 32.935942-15.845912L605.721485 453.977285C609.234044 449.195726 608.844221 439.819226 608.844221 431.919079V218.026226L347.455103 368.527138V368.522991L86.3148088 218.167226V431.919079c0 8.028706 2.8365883 15.858353 8.0535883 22.410706L218.498162 607.501403z" id="kube-bottom" fill="#1fbfcf"></path><polygon id="kube-top" fill="#c9e9ec" points="347.455103 368.526309 608.844221 218.029544 347.210426 67.6198676 86.3148088 218.158103"></polygon><path d="M409.813182 484.797397C402.319447 489.566515 392.096947 488.206279 385.963447 480.708397 383.918947 478.663897 383.238829 475.939279 382.558712 473.214662L376.425212 362.143985C423.440418 367.597368 466.370771 388.718338 499.078624 421.426191l-89.265442 63.371206zm-92.670176-14.3115C316.458741 480.028279 308.965006 488.206279 298.742506 488.206279 296.017888 488.206279 292.613153 487.522015 290.568653 486.161779l-90.629824-64.735588c27.938736-27.938735 62.691089-47.015206 101.532442-55.873323C308.965006 364.188485 315.778624 362.824103 323.276506 361.463868L317.143006 470.485897zm254.845059-45.650823L578.801682 418.701574V417.337191C578.801682 413.932456 579.4818 410.523574 582.210565 407.118838 590.384418 399.620956 600.606918 393.487456 612.869771 385.993721 614.914271 384.629338 616.958771 383.949221 619.003271 382.584838 623.092271 380.544485 626.501153 378.499985 630.590153 375.771221 631.270271 375.091103 632.630506 374.410985 633.994888 373.046603 634.675006 372.366485 635.359271 372.366485 635.359271 371.682221 644.897506 363.508368 646.942006 349.881132 640.128388 341.023015 636.719506 336.24975 630.590153 333.525132 624.456653 333.525132 619.003271 333.525132 614.234153 335.569632 609.465035 338.978515L608.100653 340.33875C606.740418 341.023015 606.056153 342.38325 604.695918 343.063368 601.287035 346.47225 598.562418 349.196868 595.8378 352.60575 594.473418 353.965985 593.113182 356.010485 591.068682 357.374868 581.5263 367.597368 572.668182 375.771221 563.810065 381.904721 561.765565 383.269103 559.721065 383.949221 557.676565 383.949221 556.316329 383.949221 554.951947 383.949221 553.587565 383.269103H552.227329L544.049329 388.718338C535.191212 379.180103 525.652976 371.002103 516.110594 362.824103c-40.881706-32.023588-90.625676-51.784324-142.41-56.553441L373.016329 297.412544 371.656094 296.048162C369.611594 294.003662 366.882829 291.959162 366.202712 287.190044 365.522594 276.287426 366.882829 264.020426 368.247212 250.393191V249.713074C368.247212 247.668574 368.927329 244.943956 369.611594 242.899456 370.291712 238.810456 370.971829 234.721456 371.656094 229.952338v-4.089-2.0445c0-12.262853-9.54238199999998-22.485353-21.125118-22.485353C345.081741 201.333485 339.628359 204.058103 335.539359 208.147103 331.450359 212.236103 329.405859 217.685338 329.405859 223.818838v1.364383 4.089C329.405859 234.041338 330.090124 238.130338 331.450359 242.215191 332.134624 244.259691 332.134624 246.304191 332.814741 249.032956V249.713074C334.179124 263.340309 336.219476 275.607309 334.859241 286.509926 334.179124 291.279044 331.450359 293.323544 329.405859 295.368044 328.725741 296.048162 328.725741 296.048162 328.045624 296.728279L327.361359 305.586397C315.098506 306.950779 302.831506 308.315162 290.568653 311.039779c-52.468588 11.582736-98.803677 38.157089-134.920412 76.318324L148.834624 382.584838h-1.364383C146.110006 382.584838 144.745624 383.269103 143.385388 383.269103c-2.0445.0-4.089-.684264999999982-6.1335-2.04449999999997C128.393771 375.091103 119.535653 366.232985 109.993271 356.010485 108.633035 354.65025 107.268653 352.60575 105.224153 351.241368 102.499535 347.836632 99.7749176 345.107868 96.3660353 341.703132 95.6859176 341.023015 94.3215353 340.33875 92.9613 338.978515 92.2770353 338.29425 91.5969176 338.29425 91.5969176 337.614132 87.5079176 334.20525 82.0586824 332.16075 76.6053 332.16075c-6.1335.0-12.2628529 2.72876500000001-15.6717353 7.497882C54.1199471 348.51675 56.1644471 362.143985 65.7026824 370.321985c.6842647.0.6842647.680117999999993 1.3643823.680117999999993C68.4273 371.682221 69.1115647 373.046603 70.4718 373.726721 74.5608 376.455485 77.9696824 378.499985 82.0586824 380.544485 84.1031824 381.224603 86.1476824 382.584838 88.1880353 383.949221c12.2669997 7.497882 22.4894997 13.627235 30.6633527 21.125117C122.260271 408.479074 122.260271 411.887956 122.260271 415.292691V416.657074L129.073888 422.790574C127.709506 424.835074 126.349271 426.195309 125.669153 428.239809c-7.99138199999999 12.627794-14.775971 25.794706-20.436706 39.339L144.077947 515.510515C149.332271 496.960721 157.025065 479.041279 167.230976 462.312044l81.087442 72.229324c7.497882 6.12935299999992 8.178 17.716235 2.0445 25.20997C248.318418 562.475956 245.5938 564.520456 242.189065 565.204721l-46.824441 13.594058L218.629624 607.500574C226.762006 617.714779 238.954359 623.346485 251.689976 623.346485L451.258888 622.993985c12.731471.0 24.799412-5.98420599999997 32.935941-15.845911l21.842559-27.503295-47.844617-13.759941C448.654535 563.160221 443.201153 553.617838 445.245653 544.079603 445.925771 541.354985 447.290153 538.630368 449.334653 536.585868l82.451823-74.273824c10.035883 16.534324 18.018971 35.121441 23.517971 55.305177l39.621-49.880824C588.530682 452.811132 580.858624 438.478897 571.988065 424.835074z" id="wheel" fill="#326de6"></path></g></g></svg></span><span class="text-uppercase font-weight-bold">minikube</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="https://minikube.sigs.k8s.io/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="https://github.com/kubernetes/minikube" target="_blank"><span>GitHub</span></a>
+			</li>
+			
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block">
+
+
+
+<input type="search" class="form-control td-search-input" placeholder=" Search this site…" aria-label="Search this site…" autocomplete="off" data-offline-search-index-json-src="/offline-search-index.c4d8fa2be30fd9f8323e7d444b843a2b.json" data-offline-search-base-href="/" data-offline-search-max-results="10" data-original-title="" title="">
+
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+  
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+
+
+
+<input type="search" class="form-control td-search-input" placeholder=" Search this site…" aria-label="Search this site…" autocomplete="off" data-offline-search-index-json-src="/offline-search-index.c4d8fa2be30fd9f8323e7d444b843a2b.json" data-offline-search-base-href="/" data-offline-search-max-results="10" data-original-title="" title="">
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation"></button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+       
+        
+
+ 
+
+
+  
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    
+    <a href="https://minikube.sigs.k8s.io/docs/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+       ⦾ 
+      Documentation</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docs">
+            
+        
+
+ 
+
+
+  
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    
+    <a href="https://minikube.sigs.k8s.io/docs/start/" class="align-left pl-0 pr-2 collapsed active td-sidebar-link td-sidebar-link__section">
+       ⦿ 
+      Get Started!</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docsstart">
+        
+    </li>
+  </ul>
+</ul>
+       
+        
+
+ 
+
+
+  
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    
+    <a href="https://minikube.sigs.k8s.io/docs/handbook/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+       ⦾ 
+      Handbook</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docshandbook">
+             
+
+      
+      
+
+      
+         
+      
+        
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docshandbookcontrols" href="https://minikube.sigs.k8s.io/docs/handbook/controls/">
+        Basic controls 
+      </a>
+              
+
+      
+      
+
+      
+         
+      
+        
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docshandbookdeploying" href="https://minikube.sigs.k8s.io/docs/handbook/deploying/">
+        Deploying apps 
+      </a>
+              
+
+      
+      
+
+      
+         
+      
+        
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docshandbookkubectl" href="https://minikube.sigs.k8s.io/docs/handbook/kubectl/">
+        Kubectl 
+      </a>
+              
+
+      
+      
+
+      
+         
+      
+        
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docshandbookaccessing" href="https://minikube.sigs.k8s.io/docs/handbook/accessing/">
+        Accessing apps 
+      </a>
+             
+        
+
+ 
+
+
+  
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    
+    <a href="https://minikube.sigs.k8s.io/docs/handbook/addons/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+       ⦾ 
+      Addons</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docshandbookaddons">
+             
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+          
+    </li>
+  </ul>
+</ul>
+        
+
+      
+      
+
+      
+         
+      
+        
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docshandbookconfig" href="https://minikube.sigs.k8s.io/docs/handbook/config/">
+        Configuration 
+      </a>
+              
+
+      
+      
+
+      
+         
+      
+        
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docshandbookdashboard" href="https://minikube.sigs.k8s.io/docs/handbook/dashboard/">
+        Dashboard 
+      </a>
+              
+
+      
+      
+
+      
+         
+      
+        
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docshandbookpushing" href="https://minikube.sigs.k8s.io/docs/handbook/pushing/">
+        Pushing images 
+      </a>
+              
+
+      
+      
+
+      
+         
+      
+        
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docshandbookvpn_and_proxy" href="https://minikube.sigs.k8s.io/docs/handbook/vpn_and_proxy/">
+        Proxies and VPNs 
+      </a>
+              
+
+      
+      
+
+      
+         
+      
+        
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docshandbookregistry" href="https://minikube.sigs.k8s.io/docs/handbook/registry/">
+        Registries 
+      </a>
+              
+
+      
+      
+
+      
+         
+      
+        
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docshandbookuntrusted_certs" href="https://minikube.sigs.k8s.io/docs/handbook/untrusted_certs/">
+        Certificates 
+      </a>
+              
+
+      
+      
+
+      
+         
+      
+        
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docshandbookoffline" href="https://minikube.sigs.k8s.io/docs/handbook/offline/">
+        Offline usage 
+      </a>
+              
+
+      
+      
+
+      
+         
+      
+        
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docshandbookhost-access" href="https://minikube.sigs.k8s.io/docs/handbook/host-access/">
+        Host access 
+      </a>
+              
+
+      
+      
+
+      
+         
+      
+        
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docshandbookpersistent_volumes" href="https://minikube.sigs.k8s.io/docs/handbook/persistent_volumes/">
+        Persistent Volumes 
+      </a>
+              
+
+      
+      
+
+      
+         
+      
+        
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docshandbookmount" href="https://minikube.sigs.k8s.io/docs/handbook/mount/">
+        Mounting filesystems 
+      </a>
+              
+
+      
+      
+
+      
+         
+      
+        
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docshandbookfilesync" href="https://minikube.sigs.k8s.io/docs/handbook/filesync/">
+        File Sync 
+      </a>
+              
+
+      
+      
+
+      
+         
+      
+        
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docshandbooktroubleshooting" href="https://minikube.sigs.k8s.io/docs/handbook/troubleshooting/">
+        Troubleshooting 
+      </a>
+         
+    </li>
+  </ul>
+</ul>
+       
+        
+
+ 
+
+
+  
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    
+    <a href="https://minikube.sigs.k8s.io/docs/faq/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+       ⦾ 
+      FAQ</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docsfaq">
+        
+    </li>
+  </ul>
+</ul>
+       
+        
+
+ 
+
+
+  
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    
+    <a href="https://minikube.sigs.k8s.io/docs/presentations/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+       ⦾ 
+      Presentations</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docspresentations">
+        
+    </li>
+  </ul>
+</ul>
+       
+        
+
+ 
+
+
+  
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    
+    <a href="https://minikube.sigs.k8s.io/docs/tutorials/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+       ⦾ 
+      Tutorials</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docstutorials">
+             
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+          
+    </li>
+  </ul>
+</ul>
+       
+        
+
+ 
+
+
+  
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    
+    <a href="https://minikube.sigs.k8s.io/docs/commands/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+       ⦾ 
+      Commands</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docscommands">
+             
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+          
+    </li>
+  </ul>
+</ul>
+       
+        
+
+ 
+
+
+  
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    
+    <a href="https://minikube.sigs.k8s.io/docs/drivers/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+       ⦾ 
+      Drivers</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docsdrivers">
+             
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+          
+    </li>
+  </ul>
+</ul>
+       
+        
+
+ 
+
+
+  
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    
+    <a href="https://minikube.sigs.k8s.io/docs/contrib/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+       ⦾ 
+      Contributing</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docscontrib">
+             
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+              
+        
+
+ 
+
+
+          
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+              
+        
+
+ 
+
+
+         
+        
+
+ 
+
+
+          
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+               
+
+      
+      
+
+      
+          
+    </li>
+  </ul>
+</ul>
+       
+        
+
+ 
+
+
+  
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    
+    <a href="https://minikube.sigs.k8s.io/docs/benchmarks/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">
+       ⦾ 
+      Benchmarks</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docsbenchmarks">
+            
+        
+
+ 
+
+
+         
+        
+
+ 
+
+
+         
+        
+
+ 
+
+
+     
+    </li>
+  </ul>
+</ul>
+   
+    </li>
+  </ul>
+</ul>
+ 
+  </nav>
+</div>
+
+
+
+
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+
+
+
+
+
+
+
+
+
+
+
+<a href="https://github.com/kubernetes/minikube/edit/master/site/content/en/docs/start/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/kubernetes/minikube/new/master/site/content/en/docs/start/_index.md?filename=change-me.md&amp;value=---%0Atitle%3A+%22Long+Page+Title%22%0AlinkTitle%3A+%22Short+Nav+Title%22%0Aweight%3A+100%0Adescription%3A+%3E-%0A+++++Page+description+for+heading+and+indexes.%0A---%0A%0A%23%23+Heading%0A%0AEdit+this+template+to+create+your+new+page.%0A%0A%2A+Give+it+a+good+name%2C+ending+in+%60.md%60+-+e.g.+%60getting-started.md%60%0A%2A+Edit+the+%22front+matter%22+section+at+the+top+of+the+page+%28weight+controls+how+its+ordered+amongst+other+pages+in+the+same+directory%3B+lowest+number+first%29.%0A%2A+Add+a+good+commit+message+at+the+bottom+of+the+page+%28%3C80+characters%3B+use+the+extended+description+field+for+more+detail%29.%0A%2A+Create+a+new+branch+so+you+can+preview+your+new+file+and+request+a+review+via+Pull+Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
+<a href="https://github.com/kubernetes/minikube/issues/new?title=minikube%20start" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="https://minikube.sigs.k8s.io/docs/start/#what-youll-need">What you’ll need</a>
+      <ul>
+        <li><a href="https://minikube.sigs.k8s.io/docs/start/#loadbalancer-deployments">LoadBalancer deployments</a></li>
+      </ul>
+    </li>
+    <li><a href="https://minikube.sigs.k8s.io/docs/start/#take-the-next-step">Take the next step</a></li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+<li class="breadcrumb-item">
+	<a href="https://minikube.sigs.k8s.io/docs/">Documentation</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="https://minikube.sigs.k8s.io/docs/start/">Get Started!</a>
+</li>
+
+	</ol>
+</nav>
+
+            
+<div class="td-content">
+	<h1>minikube start</h1>
+        
+	
+	<p>minikube is local Kubernetes, focusing on making it easy to learn and develop for Kubernetes.</p>
+<p>All you need is Docker (or similarly compatible) container or a Virtual Machine environment, and Kubernetes is a single command away: <code>minikube start</code></p>
+<h2 id="what-youll-need">What you’ll need<a aria-hidden="true" href="https://minikube.sigs.k8s.io/docs/start/#what-youll-need" style="visibility: hidden;"> <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h2>
+<ul>
+<li>2 CPUs or more</li>
+<li>2GB of free memory</li>
+<li>20GB of free disk space</li>
+<li>Internet connection</li>
+<li>Container or virtual machine manager, such as: <a href="https://minikube.sigs.k8s.io/docs/drivers/docker/">Docker</a>, <a href="https://minikube.sigs.k8s.io/docs/drivers/hyperkit/">Hyperkit</a>, <a href="https://minikube.sigs.k8s.io/docs/drivers/hyperv/">Hyper-V</a>, <a href="https://minikube.sigs.k8s.io/docs/drivers/kvm2/">KVM</a>, <a href="https://minikube.sigs.k8s.io/docs/drivers/parallels/">Parallels</a>, <a href="https://minikube.sigs.k8s.io/docs/drivers/podman/">Podman</a>, <a href="https://minikube.sigs.k8s.io/docs/drivers/virtualbox/">VirtualBox</a>, or <a href="https://minikube.sigs.k8s.io/docs/drivers/vmware/">VMware Fusion/Workstation</a></li>
+</ul>
+<h2 class="step"><span class="fa-stack fa-1x"><i class="fa fa-circle fa-stack-2x"></i><strong class="fa-stack-1x text-primary">1</strong></span>Installation</h2>
+<div class="card"><div class="card-body card-body-blue">
+<p>Click on the buttons that describe your target platform. For other architectures, see <a href="https://github.com/kubernetes/minikube/releases/latest">the release page</a> for a complete list of minikube binaries.</p>
+<div data-quiz-id="" data-level="0" class="row option-row">
+    <div class="col-lg-2 my-auto">
+        <p>Operating system</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/Linux" type="button" class="btn btn-outline-primary option-button">Linux</button>
+<button data-quiz-id="/macOS" type="button" class="btn btn-outline-primary option-button active">macOS</button>
+<button data-quiz-id="/Windows" type="button" class="btn btn-outline-primary option-button">Windows</button></p>
+</div>
+</div>
+<div data-quiz-id="/Linux" data-level="1" class="row option-row hide">
+    <div class="col-lg-2 my-auto">
+        <p>Architecture</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/Linux/x86-64" type="button" class="btn btn-outline-primary option-button">x86-64</button>
+<button data-quiz-id="/Linux/ARM64" type="button" class="btn btn-outline-primary option-button">ARM64</button>
+<button data-quiz-id="/Linux/ARMv7" type="button" class="btn btn-outline-primary option-button">ARMv7</button>
+<button data-quiz-id="/Linux/ppc64" type="button" class="btn btn-outline-primary option-button">ppc64</button>
+<button data-quiz-id="/Linux/S390x" type="button" class="btn btn-outline-primary option-button">S390x</button></p>
+</div>
+</div>
+<div data-quiz-id="/Linux/x86-64" data-level="2" class="row option-row hide">
+    <div class="col-lg-2 my-auto">
+        <p>Release type</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/Linux/x86-64/Stable" type="button" class="btn btn-outline-primary option-button">Stable</button>
+<button data-quiz-id="/Linux/x86-64/Beta" type="button" class="btn btn-outline-primary option-button">Beta</button></p>
+</div>
+</div>
+<div data-quiz-id="/Linux/x86-64/Stable" data-level="3" class="row option-row hide">
+    <div class="col-lg-2 my-auto">
+        <p>Installer type</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/Linux/x86-64/Stable/Binary download" type="button" class="btn btn-outline-primary option-button">Binary download</button>
+<button data-quiz-id="/Linux/x86-64/Stable/Debian package" type="button" class="btn btn-outline-primary option-button">Debian package</button>
+<button data-quiz-id="/Linux/x86-64/Stable/RPM package" type="button" class="btn btn-outline-primary option-button">RPM package</button></p>
+</div>
+</div>
+<div data-quiz-id="/Linux/x86-64/Beta" data-level="3" class="row option-row hide">
+    <div class="col-lg-2 my-auto">
+        <p>Installer type</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/Linux/x86-64/Beta/Binary download" type="button" class="btn btn-outline-primary option-button">Binary download</button>
+<button data-quiz-id="/Linux/x86-64/Beta/Debian package" type="button" class="btn btn-outline-primary option-button">Debian package</button>
+<button data-quiz-id="/Linux/x86-64/Beta/RPM package" type="button" class="btn btn-outline-primary option-button">RPM package</button></p>
+</div>
+</div>
+<div data-quiz-id="/Linux/ARM64" data-level="2" class="row option-row hide">
+    <div class="col-lg-2 my-auto">
+        <p>Release type</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/Linux/ARM64/Stable" type="button" class="btn btn-outline-primary option-button">Stable</button>
+<button data-quiz-id="/Linux/ARM64/Beta" type="button" class="btn btn-outline-primary option-button">Beta</button></p>
+</div>
+</div>
+<div data-quiz-id="/Linux/ARM64/Stable" data-level="3" class="row option-row hide">
+    <div class="col-lg-2 my-auto">
+        <p>Installer type</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/Linux/ARM64/Stable/Binary download" type="button" class="btn btn-outline-primary option-button">Binary download</button>
+<button data-quiz-id="/Linux/ARM64/Stable/Debian package" type="button" class="btn btn-outline-primary option-button">Debian package</button>
+<button data-quiz-id="/Linux/ARM64/Stable/RPM package" type="button" class="btn btn-outline-primary option-button">RPM package</button></p>
+</div>
+</div>
+<div data-quiz-id="/Linux/ARM64/Beta" data-level="3" class="row option-row hide">
+    <div class="col-lg-2 my-auto">
+        <p>Installer type</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/Linux/ARM64/Beta/Binary download" type="button" class="btn btn-outline-primary option-button">Binary download</button>
+<button data-quiz-id="/Linux/ARM64/Beta/Debian package" type="button" class="btn btn-outline-primary option-button">Debian package</button>
+<button data-quiz-id="/Linux/ARM64/Beta/RPM package" type="button" class="btn btn-outline-primary option-button">RPM package</button></p>
+</div>
+</div>
+<div data-quiz-id="/Linux/ppc64" data-level="2" class="row option-row hide">
+    <div class="col-lg-2 my-auto">
+        <p>Release type</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/Linux/ppc64/Stable" type="button" class="btn btn-outline-primary option-button">Stable</button>
+<button data-quiz-id="/Linux/ppc64/Beta" type="button" class="btn btn-outline-primary option-button">Beta</button></p>
+</div>
+</div>
+<div data-quiz-id="/Linux/ppc64/Stable" data-level="3" class="row option-row hide">
+    <div class="col-lg-2 my-auto">
+        <p>Installer type</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/Linux/ppc64/Stable/Binary download" type="button" class="btn btn-outline-primary option-button">Binary download</button>
+<button data-quiz-id="/Linux/ppc64/Stable/Debian package" type="button" class="btn btn-outline-primary option-button">Debian package</button>
+<button data-quiz-id="/Linux/ppc64/Stable/RPM package" type="button" class="btn btn-outline-primary option-button">RPM package</button></p>
+</div>
+</div>
+<div data-quiz-id="/Linux/ppc64/Beta" data-level="3" class="row option-row hide">
+    <div class="col-lg-2 my-auto">
+        <p>Installer type</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/Linux/ppc64/Beta/Binary download" type="button" class="btn btn-outline-primary option-button">Binary download</button>
+<button data-quiz-id="/Linux/ppc64/Beta/Debian package" type="button" class="btn btn-outline-primary option-button">Debian package</button>
+<button data-quiz-id="/Linux/ppc64/Beta/RPM package" type="button" class="btn btn-outline-primary option-button">RPM package</button></p>
+</div>
+</div>
+<div data-quiz-id="/Linux/S390x" data-level="2" class="row option-row hide">
+    <div class="col-lg-2 my-auto">
+        <p>Release type</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/Linux/S390x/Stable" type="button" class="btn btn-outline-primary option-button">Stable</button>
+<button data-quiz-id="/Linux/S390x/Beta" type="button" class="btn btn-outline-primary option-button">Beta</button></p>
+</div>
+</div>
+<div data-quiz-id="/Linux/S390x/Stable" data-level="3" class="row option-row hide">
+    <div class="col-lg-2 my-auto">
+        <p>Installer type</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/Linux/S390x/Stable/Binary download" type="button" class="btn btn-outline-primary option-button">Binary download</button>
+<button data-quiz-id="/Linux/S390x/Stable/Debian package" type="button" class="btn btn-outline-primary option-button">Debian package</button>
+<button data-quiz-id="/Linux/S390x/Stable/RPM package" type="button" class="btn btn-outline-primary option-button">RPM package</button></p>
+</div>
+</div>
+<div data-quiz-id="/Linux/S390x/Beta" data-level="3" class="row option-row hide">
+    <div class="col-lg-2 my-auto">
+        <p>Installer type</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/Linux/S390x/Beta/Binary download" type="button" class="btn btn-outline-primary option-button">Binary download</button>
+<button data-quiz-id="/Linux/S390x/Beta/Debian package" type="button" class="btn btn-outline-primary option-button">Debian package</button>
+<button data-quiz-id="/Linux/S390x/Beta/RPM package" type="button" class="btn btn-outline-primary option-button">RPM package</button></p>
+</div>
+</div>
+<div data-quiz-id="/Linux/ARMv7" data-level="2" class="row option-row hide">
+    <div class="col-lg-2 my-auto">
+        <p>Release type</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/Linux/ARMv7/Stable" type="button" class="btn btn-outline-primary option-button">Stable</button>
+<button data-quiz-id="/Linux/ARMv7/Beta" type="button" class="btn btn-outline-primary option-button">Beta</button></p>
+</div>
+</div>
+<div data-quiz-id="/Linux/ARMv7/Stable" data-level="3" class="row option-row hide">
+    <div class="col-lg-2 my-auto">
+        <p>Installer type</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/Linux/ARMv7/Stable/Binary download" type="button" class="btn btn-outline-primary option-button">Binary download</button>
+<button data-quiz-id="/Linux/ARMv7/Stable/Debian package" type="button" class="btn btn-outline-primary option-button">Debian package</button>
+<button data-quiz-id="/Linux/ARMv7/Stable/RPM package" type="button" class="btn btn-outline-primary option-button">RPM package</button></p>
+</div>
+</div>
+<div data-quiz-id="/Linux/ARMv7/Beta" data-level="3" class="row option-row hide">
+    <div class="col-lg-2 my-auto">
+        <p>Installer type</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/Linux/ARMv7/Beta/Binary download" type="button" class="btn btn-outline-primary option-button">Binary download</button>
+<button data-quiz-id="/Linux/ARMv7/Beta/Debian package" type="button" class="btn btn-outline-primary option-button">Debian package</button>
+<button data-quiz-id="/Linux/ARMv7/Beta/RPM package" type="button" class="btn btn-outline-primary option-button">RPM package</button></p>
+</div>
+</div>
+<div data-quiz-id="/macOS" data-level="1" class="row option-row">
+    <div class="col-lg-2 my-auto">
+        <p>Architecture</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/macOS/x86-64" type="button" class="btn btn-outline-primary option-button active">x86-64</button>
+<button data-quiz-id="/macOS/ARM64" type="button" class="btn btn-outline-primary option-button">ARM64</button></p>
+</div>
+</div>
+<div data-quiz-id="/macOS/x86-64" data-level="2" class="row option-row">
+    <div class="col-lg-2 my-auto">
+        <p>Release type</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/macOS/x86-64/Stable" type="button" class="btn btn-outline-primary option-button active">Stable</button>
+<button data-quiz-id="/macOS/x86-64/Beta" type="button" class="btn btn-outline-primary option-button">Beta</button></p>
+</div>
+</div>
+<div data-quiz-id="/macOS/x86-64/Stable" data-level="3" class="row option-row">
+    <div class="col-lg-2 my-auto">
+        <p>Installer type</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/macOS/x86-64/Stable/Binary download" type="button" class="btn btn-outline-primary option-button active">Binary download</button>
+<button data-quiz-id="/macOS/x86-64/Stable/Homebrew" type="button" class="btn btn-outline-primary option-button">Homebrew</button></p>
+</div>
+</div>
+<div data-quiz-id="/macOS/x86-64/Beta" data-level="3" class="row option-row hide">
+    <div class="col-lg-2 my-auto">
+        <p>Installer type</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/macOS/x86-64/Beta/Binary download" type="button" class="btn btn-outline-primary option-button">Binary download</button></p>
+</div>
+</div>
+<div data-quiz-id="/macOS/ARM64" data-level="2" class="row option-row hide">
+    <div class="col-lg-2 my-auto">
+        <p>Release type</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/macOS/ARM64/Stable" type="button" class="btn btn-outline-primary option-button">Stable</button>
+<button data-quiz-id="/macOS/ARM64/Beta" type="button" class="btn btn-outline-primary option-button">Beta</button></p>
+</div>
+</div>
+<div data-quiz-id="/macOS/ARM64/Stable" data-level="3" class="row option-row hide">
+    <div class="col-lg-2 my-auto">
+        <p>Installer type</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/macOS/ARM64/Stable/Binary download" type="button" class="btn btn-outline-primary option-button">Binary download</button>
+<button data-quiz-id="/macOS/ARM64/Stable/Homebrew" type="button" class="btn btn-outline-primary option-button">Homebrew</button></p>
+</div>
+</div>
+<div data-quiz-id="/macOS/ARM64/Beta" data-level="3" class="row option-row hide">
+    <div class="col-lg-2 my-auto">
+        <p>Installer type</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/macOS/ARM64/Beta/Binary download" type="button" class="btn btn-outline-primary option-button">Binary download</button></p>
+</div>
+</div>
+<div data-quiz-id="/Windows" data-level="1" class="row option-row hide">
+    <div class="col-lg-2 my-auto">
+        <p>Architecture</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/Windows/x86-64" type="button" class="btn btn-outline-primary option-button">x86-64</button></p>
+</div>
+</div>
+<div data-quiz-id="/Windows/x86-64" data-level="2" class="row option-row hide">
+    <div class="col-lg-2 my-auto">
+        <p>Release type</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/Windows/x86-64/Stable" type="button" class="btn btn-outline-primary option-button">Stable</button>
+<button data-quiz-id="/Windows/x86-64/Beta" type="button" class="btn btn-outline-primary option-button">Beta</button></p>
+</div>
+</div>
+<div data-quiz-id="/Windows/x86-64/Stable" data-level="3" class="row option-row hide">
+    <div class="col-lg-2 my-auto">
+        <p>Installer type</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/Windows/x86-64/Stable/.exe download" type="button" class="btn btn-outline-primary option-button">.exe download</button>
+<button data-quiz-id="/Windows/x86-64/Stable/Windows Package Manager" type="button" class="btn btn-outline-primary option-button">Windows Package Manager</button>
+<button data-quiz-id="/Windows/x86-64/Stable/Chocolatey" type="button" class="btn btn-outline-primary option-button">Chocolatey</button></p>
+</div>
+</div>
+<div data-quiz-id="/Windows/x86-64/Beta" data-level="3" class="row option-row hide">
+    <div class="col-lg-2 my-auto">
+        <p>Installer type</p>
+    </div>
+    <div class="col-lg-10"><p><button data-quiz-id="/Windows/x86-64/Beta/.exe download" type="button" class="btn btn-outline-primary option-button">.exe download</button></p>
+</div>
+</div>
+<div data-quiz-id="/Linux/x86-64/Stable/Binary download" class="quiz-instruction hide">
+<p>To install the latest minikube <b>stable</b> release on <b>x86-64</b> <b>Linux</b> using <b>binary download</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token function">curl</span> -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+<span class="token function">sudo</span> <span class="token function">install</span> minikube-linux-amd64 /usr/local/bin/minikube
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/x86-64/Beta/Binary download" class="quiz-instruction hide">
+<p>To install the latest minikube <b>beta</b> release on <b>x86-64</b> <b>Linux</b> using <b>binary download</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token assign-left variable">r</span><span class="token operator">=</span>https://api.github.com/repos/kubernetes/minikube/releases
+<span class="token function">curl</span> -LO <span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -s $r <span class="token operator">|</span> <span class="token function">grep</span> -o <span class="token string">'http.*download/v.*beta.*/minikube-linux-amd64'</span> <span class="token operator">|</span> <span class="token function">head</span> -n1<span class="token variable">)</span></span>
+<span class="token function">sudo</span> <span class="token function">install</span> minikube-linux-amd64 /usr/local/bin/minikube
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/x86-64/Stable/Debian package" class="quiz-instruction hide">
+<p>To install the latest minikube <b>stable</b> release on <b>x86-64</b> <b>Linux</b> using <b>Debian package</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token function">curl</span> -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
+<span class="token function">sudo</span> dpkg -i minikube_latest_amd64.deb
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/x86-64/Beta/Debian package" class="quiz-instruction hide">
+<p>To install the latest minikube <b>beta</b> release on <b>x86-64</b> <b>Linux</b> using <b>Debian package</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token assign-left variable">r</span><span class="token operator">=</span>https://api.github.com/repos/kubernetes/minikube/releases
+<span class="token assign-left variable">u</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -s $r <span class="token operator">|</span> <span class="token function">grep</span> -o <span class="token string">'http.*download/v.*beta.*/minikube_.*_amd64.deb'</span> <span class="token operator">|</span> <span class="token function">head</span> -n1<span class="token variable">)</span></span>
+<span class="token function">curl</span> -L <span class="token variable">$u</span> <span class="token operator">&gt;</span> minikube_beta_amd64.deb <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> dpkg -i minikube_beta_amd64.deb
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/x86-64/Stable/RPM package" class="quiz-instruction hide">
+<p>To install the latest minikube <b>stable</b> release on <b>x86-64</b> <b>Linux</b> using <b>RPM package</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token function">curl</span> -LO https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm
+<span class="token function">sudo</span> <span class="token function">rpm</span> -Uvh minikube-latest.x86_64.rpm
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/x86-64/Beta/RPM package" class="quiz-instruction hide">
+<p>To install the latest minikube <b>beta</b> release on <b>x86-64</b> <b>Linux</b> using <b>RPM package</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token assign-left variable">r</span><span class="token operator">=</span>https://api.github.com/repos/kubernetes/minikube/releases
+<span class="token assign-left variable">u</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -s $r <span class="token operator">|</span> <span class="token function">grep</span> -o <span class="token string">'http.*download/v.*beta.*/minikube-.*.x86_64.rpm'</span> <span class="token operator">|</span> <span class="token function">head</span> -n1<span class="token variable">)</span></span>
+<span class="token function">curl</span> -L <span class="token variable">$u</span> <span class="token operator">&gt;</span> minikube-beta.x86_64.rpm <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">rpm</span> -Uvh minikube-beta.x86_64.rpm
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/ARM64/Stable/Binary download" class="quiz-instruction hide">
+<p>To install the latest minikube <b>stable</b> release on <b>ARM64</b> <b>Linux</b> using <b>binary download</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token function">curl</span> -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-arm64
+<span class="token function">sudo</span> <span class="token function">install</span> minikube-linux-arm64 /usr/local/bin/minikube
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/ARM64/Beta/Binary download" class="quiz-instruction hide">
+<p>To install the latest minikube <b>beta</b> release on <b>ARM64</b> <b>Linux</b> using <b>binary download</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token assign-left variable">r</span><span class="token operator">=</span>https://api.github.com/repos/kubernetes/minikube/releases
+<span class="token function">curl</span> -LO <span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -s $r <span class="token operator">|</span> <span class="token function">grep</span> -o <span class="token string">'http.*download/v.*beta.*/minikube-linux-arm64'</span> <span class="token operator">|</span> <span class="token function">head</span> -n1<span class="token variable">)</span></span>
+<span class="token function">sudo</span> <span class="token function">install</span> minikube-linux-arm64 /usr/local/bin/minikube
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/ARM64/Stable/Debian package" class="quiz-instruction hide">
+<p>To install the latest minikube <b>stable</b> release on <b>ARM64</b> <b>Linux</b> using <b>Debian package</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token function">curl</span> -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_arm64.deb
+<span class="token function">sudo</span> dpkg -i minikube_latest_arm64.deb
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/ARM64/Beta/Debian package" class="quiz-instruction hide">
+<p>To install the latest minikube <b>beta</b> release on <b>ARM64</b> <b>Linux</b> using <b>Debian package</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token assign-left variable">r</span><span class="token operator">=</span>https://api.github.com/repos/kubernetes/minikube/releases
+<span class="token assign-left variable">u</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -s $r <span class="token operator">|</span> <span class="token function">grep</span> -o <span class="token string">'http.*download/v.*beta.*/minikube_.*_arm64.deb'</span> <span class="token operator">|</span> <span class="token function">head</span> -n1<span class="token variable">)</span></span>
+<span class="token function">curl</span> -L <span class="token variable">$u</span> <span class="token operator">&gt;</span> minikube_beta_arm64.deb <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> dpkg -i minikube_beta_arm64.deb
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/ARM64/Stable/RPM package" class="quiz-instruction hide">
+<p>To install the latest minikube <b>stable</b> release on <b>ARM64</b> <b>Linux</b> using <b>RPM package</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token function">curl</span> -LO https://storage.googleapis.com/minikube/releases/latest/minikube-latest.aarch64.rpm
+<span class="token function">sudo</span> <span class="token function">rpm</span> -Uvh minikube-latest.aarch64.rpm
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/ARM64/Beta/RPM package" class="quiz-instruction hide">
+<p>To install the latest minikube <b>beta</b> release on <b>ARM64</b> <b>Linux</b> using <b>RPM package</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token assign-left variable">r</span><span class="token operator">=</span>https://api.github.com/repos/kubernetes/minikube/releases
+<span class="token assign-left variable">u</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -s $r <span class="token operator">|</span> <span class="token function">grep</span> -o <span class="token string">'http.*download/v.*beta.*/minikube-.*.aarch64.rpm'</span> <span class="token operator">|</span> <span class="token function">head</span> -n1<span class="token variable">)</span></span>
+<span class="token function">curl</span> -L <span class="token variable">$u</span> <span class="token operator">&gt;</span> minikube-beta.aarch64.rpm <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">rpm</span> -Uvh minikube-beta.aarch64.rpm
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/ppc64/Stable/Binary download" class="quiz-instruction hide">
+<p>To install the latest minikube <b>stable</b> release on <b>ppc64</b> <b>Linux</b> using <b>binary download</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token function">curl</span> -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-ppc64le
+<span class="token function">sudo</span> <span class="token function">install</span> minikube-linux-ppc64le /usr/local/bin/minikube
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/ppc64/Beta/Binary download" class="quiz-instruction hide">
+<p>To install the latest minikube <b>beta</b> release on <b>ppc64</b> <b>Linux</b> using <b>binary download</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token assign-left variable">r</span><span class="token operator">=</span>https://api.github.com/repos/kubernetes/minikube/releases
+<span class="token function">curl</span> -LO <span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -s $r <span class="token operator">|</span> <span class="token function">grep</span> -o <span class="token string">'http.*download/v.*beta.*/minikube-linux-ppc64le'</span> <span class="token operator">|</span> <span class="token function">head</span> -n1<span class="token variable">)</span></span>
+<span class="token function">sudo</span> <span class="token function">install</span> minikube-linux-ppc64le /usr/local/bin/minikube
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/ppc64/Stable/Debian package" class="quiz-instruction hide">
+<p>To install the latest minikube <b>stable</b> release on <b>ppc64</b> <b>Linux</b> using <b>Debian package</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token function">curl</span> -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_ppc64le.deb
+<span class="token function">sudo</span> dpkg -i minikube_latest_ppc64le.deb
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/ppc64/Beta/Debian package" class="quiz-instruction hide">
+<p>To install the latest minikube <b>beta</b> release on <b>ppc64</b> <b>Linux</b> using <b>Debian package</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token assign-left variable">r</span><span class="token operator">=</span>https://api.github.com/repos/kubernetes/minikube/releases
+<span class="token assign-left variable">u</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -s $r <span class="token operator">|</span> <span class="token function">grep</span> -o <span class="token string">'http.*download/v.*beta.*/minikube_.*_ppc64le.deb'</span> <span class="token operator">|</span> <span class="token function">head</span> -n1<span class="token variable">)</span></span>
+<span class="token function">curl</span> -L <span class="token variable">$u</span> <span class="token operator">&gt;</span> minikube_beta_ppc64le.deb <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> dpkg -i minikube_beta_ppc64le.deb
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/ppc64/Stable/RPM package" class="quiz-instruction hide">
+<p>To install the latest minikube <b>stable</b> release on <b>ppc64</b> <b>Linux</b> using <b>RPM package</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token function">curl</span> -LO https://storage.googleapis.com/minikube/releases/latest/minikube-latest.ppc64el.rpm
+<span class="token function">sudo</span> <span class="token function">rpm</span> -Uvh minikube-latest.ppc64el.rpm
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/ppc64/Beta/RPM package" class="quiz-instruction hide">
+<p>To install the latest minikube <b>beta</b> release on <b>ppc64</b> <b>Linux</b> using <b>RPM package</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token assign-left variable">r</span><span class="token operator">=</span>https://api.github.com/repos/kubernetes/minikube/releases
+<span class="token assign-left variable">u</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -s $r <span class="token operator">|</span> <span class="token function">grep</span> -o <span class="token string">'http.*download/v.*beta.*/minikube-.*.ppc64el.rpm'</span> <span class="token operator">|</span> <span class="token function">head</span> -n1<span class="token variable">)</span></span>
+<span class="token function">curl</span> -L <span class="token variable">$u</span> <span class="token operator">&gt;</span> minikube-beta.ppc64el.rpm <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">rpm</span> -Uvh minikube-beta.ppc64el.rpm
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/S390x/Stable/Binary download" class="quiz-instruction hide">
+<p>To install the latest minikube <b>stable</b> release on <b>S390x</b> <b>Linux</b> using <b>binary download</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token function">curl</span> -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-s390x
+<span class="token function">sudo</span> <span class="token function">install</span> minikube-linux-s390x /usr/local/bin/minikube
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/S390x/Beta/Binary download" class="quiz-instruction hide">
+<p>To install the latest minikube <b>beta</b> release on <b>S390x</b> <b>Linux</b> using <b>binary download</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token assign-left variable">r</span><span class="token operator">=</span>https://api.github.com/repos/kubernetes/minikube/releases
+<span class="token function">curl</span> -LO <span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -s $r <span class="token operator">|</span> <span class="token function">grep</span> -o <span class="token string">'http.*download/v.*beta.*/minikube-linux-s390x'</span> <span class="token operator">|</span> <span class="token function">head</span> -n1<span class="token variable">)</span></span>
+<span class="token function">sudo</span> <span class="token function">install</span> minikube-linux-s390x /usr/local/bin/minikube
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/S390x/Stable/Debian package" class="quiz-instruction hide">
+<p>To install the latest minikube <b>stable</b> release on <b>S390x</b> <b>Linux</b> using <b>Debian package</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token function">curl</span> -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_s390x.deb
+<span class="token function">sudo</span> dpkg -i minikube_latest_s390x.deb
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/S390x/Beta/Debian package" class="quiz-instruction hide">
+<p>To install the latest minikube <b>beta</b> release on <b>S390x</b> <b>Linux</b> using <b>Debian package</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token assign-left variable">r</span><span class="token operator">=</span>https://api.github.com/repos/kubernetes/minikube/releases
+<span class="token assign-left variable">u</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -s $r <span class="token operator">|</span> <span class="token function">grep</span> -o <span class="token string">'http.*download/v.*beta.*/minikube_.*_s390x.deb'</span> <span class="token operator">|</span> <span class="token function">head</span> -n1<span class="token variable">)</span></span>
+<span class="token function">curl</span> -L <span class="token variable">$u</span> <span class="token operator">&gt;</span> minikube_beta_s390x.deb <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> dpkg -i minikube_beta_s390x.deb
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/S390x/Stable/RPM package" class="quiz-instruction hide">
+<p>To install the latest minikube <b>stable</b> release on <b>S390x</b> <b>Linux</b> using <b>RPM package</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token function">curl</span> -LO https://storage.googleapis.com/minikube/releases/latest/minikube-latest.s390x.rpm
+<span class="token function">sudo</span> <span class="token function">rpm</span> -Uvh minikube-latest.s390x.rpm
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/S390x/Beta/RPM package" class="quiz-instruction hide">
+<p>To install the latest minikube <b>beta</b> release on <b>S390x</b> <b>Linux</b> using <b>RPM package</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token assign-left variable">r</span><span class="token operator">=</span>https://api.github.com/repos/kubernetes/minikube/releases
+<span class="token assign-left variable">u</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -s $r <span class="token operator">|</span> <span class="token function">grep</span> -o <span class="token string">'http.*download/v.*beta.*/minikube-.*.s390x.rpm'</span> <span class="token operator">|</span> <span class="token function">head</span> -n1<span class="token variable">)</span></span>
+<span class="token function">curl</span> -L <span class="token variable">$u</span> <span class="token operator">&gt;</span> minikube-beta.s390x.rpm <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">rpm</span> -Uvh minikube-beta.s390x.rpm
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/ARMv7/Stable/Binary download" class="quiz-instruction hide">
+<p>To install the latest minikube <b>stable</b> release on <b>ARMv7</b> <b>Linux</b> using <b>binary download</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token function">curl</span> -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-arm
+<span class="token function">sudo</span> <span class="token function">install</span> minikube-linux-arm /usr/local/bin/minikube
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/ARMv7/Beta/Binary download" class="quiz-instruction hide">
+<p>To install the latest minikube <b>beta</b> release on <b>ARMv7</b> <b>Linux</b> using <b>binary download</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token assign-left variable">r</span><span class="token operator">=</span>https://api.github.com/repos/kubernetes/minikube/releases
+<span class="token function">curl</span> -LO <span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -s $r <span class="token operator">|</span> <span class="token function">grep</span> -o <span class="token string">'http.*download/v.*beta.*/minikube-linux-arm'</span> <span class="token operator">|</span> <span class="token function">head</span> -n1<span class="token variable">)</span></span>
+<span class="token function">sudo</span> <span class="token function">install</span> minikube-linux-arm /usr/local/bin/minikube
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/ARMv7/Stable/Debian package" class="quiz-instruction hide">
+<p>To install the latest minikube <b>stable</b> release on <b>ARMv7</b> <b>Linux</b> using <b>Debian package</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token function">curl</span> -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_armhf.deb
+<span class="token function">sudo</span> dpkg -i minikube_latest_armhf.deb
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/ARMv7/Beta/Debian package" class="quiz-instruction hide">
+<p>To install the latest minikube <b>beta</b> release on <b>ARMv7</b> <b>Linux</b> using <b>Debian package</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token assign-left variable">r</span><span class="token operator">=</span>https://api.github.com/repos/kubernetes/minikube/releases
+<span class="token assign-left variable">u</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -s $r <span class="token operator">|</span> <span class="token function">grep</span> -o <span class="token string">'http.*download/v.*beta.*/minikube_.*_armhf.deb'</span> <span class="token operator">|</span> <span class="token function">head</span> -n1<span class="token variable">)</span></span>
+<span class="token function">curl</span> -L <span class="token variable">$u</span> <span class="token operator">&gt;</span> minikube_beta_armhf.deb <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> dpkg -i minikube_beta_armhf.deb
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/ARMv7/Stable/RPM package" class="quiz-instruction hide">
+<p>To install the latest minikube <b>stable</b> release on <b>ARMv7</b> <b>Linux</b> using <b>RPM package</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token function">curl</span> -LO https://storage.googleapis.com/minikube/releases/latest/minikube-latest.armv7hl.rpm
+<span class="token function">sudo</span> <span class="token function">rpm</span> -Uvh minikube-latest.armv7hl.rpm
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Linux/ARMv7/Beta/RPM package" class="quiz-instruction hide">
+<p>To install the latest minikube <b>beta</b> release on <b>ARMv7</b> <b>Linux</b> using <b>RPM package</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token assign-left variable">r</span><span class="token operator">=</span>https://api.github.com/repos/kubernetes/minikube/releases
+<span class="token assign-left variable">u</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -s $r <span class="token operator">|</span> <span class="token function">grep</span> -o <span class="token string">'http.*download/v.*beta.*/minikube-.*.armv7hl.rpm'</span> <span class="token operator">|</span> <span class="token function">head</span> -n1<span class="token variable">)</span></span>
+<span class="token function">curl</span> -L <span class="token variable">$u</span> <span class="token operator">&gt;</span> minikube-beta.armv7hl.rpm <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">rpm</span> -Uvh minikube-beta.armv7hl.rpm
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/macOS/x86-64/Stable/Homebrew" class="quiz-instruction hide">
+<p>To install the latest minikube <b>stable</b> release on <b>x86-64</b> <b>macOS</b> using <b>Homebrew</b>:</p>
+<p>If the <a href="https://brew.sh/">Homebrew Package Manager</a> is installed:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell">brew <span class="token function">install</span> minikube
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div><p>If <code>which minikube</code> fails after installation via brew, you may have to remove the old minikube links and link the newly installed binary:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell">brew unlink minikube
+brew <span class="token function">link</span> minikube
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/macOS/x86-64/Stable/Binary download" class="quiz-instruction">
+<p>To install the latest minikube <b>stable</b> release on <b>x86-64</b> <b>macOS</b> using <b>binary download</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token function">curl</span> -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64
+<span class="token function">sudo</span> <span class="token function">install</span> minikube-darwin-amd64 /usr/local/bin/minikube
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/macOS/x86-64/Beta/Binary download" class="quiz-instruction hide">
+<p>To install the latest minikube <b>beta</b> release on <b>x86-64</b> <b>macOS</b> using <b>binary download</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token assign-left variable">r</span><span class="token operator">=</span>https://api.github.com/repos/kubernetes/minikube/releases
+<span class="token function">curl</span> -LO <span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -s $r <span class="token operator">|</span> <span class="token function">grep</span> -o <span class="token string">'http.*download/v.*beta.*/minikube-darwin-amd64'</span> <span class="token operator">|</span> <span class="token function">head</span> -n1<span class="token variable">)</span></span>
+<span class="token function">sudo</span> <span class="token function">install</span> minikube-darwin-amd64 /usr/local/bin/minikube
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/macOS/ARM64/Stable/Binary download" class="quiz-instruction hide">
+<p>To install the latest minikube <b>stable</b> release on <b>ARM64</b> <b>macOS</b> using <b>binary download</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token function">curl</span> -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-arm64
+<span class="token function">sudo</span> <span class="token function">install</span> minikube-darwin-arm64 /usr/local/bin/minikube
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/macOS/ARM64/Stable/Homebrew" class="quiz-instruction hide">
+<p>To install the latest minikube <b>stable</b> release on <b>ARM64</b> <b>macOS</b> using <b>Homebrew</b>:</p>
+<p>If the <a href="https://brew.sh/">Homebrew Package Manager</a> is installed:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell">brew <span class="token function">install</span> minikube
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div><p>If <code>which minikube</code> fails after installation via brew, you may have to remove the old minikube links and link the newly installed binary:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell">brew unlink minikube
+brew <span class="token function">link</span> minikube
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/macOS/ARM64/Beta/Binary download" class="quiz-instruction hide">
+<p>To install the latest minikube <b>beta</b> release on <b>ARM64</b> <b>macOS</b> using <b>binary download</b>:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token assign-left variable">r</span><span class="token operator">=</span>https://api.github.com/repos/kubernetes/minikube/releases
+<span class="token function">curl</span> -LO <span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -s $r <span class="token operator">|</span> <span class="token function">grep</span> -o <span class="token string">'http.*download/v.*beta.*/minikube-darwin-arm64'</span> <span class="token operator">|</span> <span class="token function">head</span> -n1<span class="token variable">)</span></span>
+<span class="token function">sudo</span> <span class="token function">install</span> minikube-darwin-arm64 /usr/local/bin/minikube
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Windows/x86-64/Stable/Windows Package Manager" class="quiz-instruction hide">
+<p>To install the latest minikube <b>stable</b> release on <b>x86-64</b> <b>Windows</b> using <b>Windows Package Manager</b>:</p>
+<p>If the <a href="https://docs.microsoft.com/en-us/windows/package-manager/">Windows Package Manager</a> is installed, use the following command to install minikube:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell">winget <span class="token function">install</span> minikube
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Windows/x86-64/Stable/Chocolatey" class="quiz-instruction hide">
+<p>To install the latest minikube <b>stable</b> release on <b>x86-64</b> <b>Windows</b> using <b>Chocolatey</b>:</p>
+<p>If the <a href="https://chocolatey.org/">Chocolatey Package Manager</a> is installed, use the following command:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell">choco <span class="token function">install</span> minikube
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div>
+</div>
+<div data-quiz-id="/Windows/x86-64/Stable/.exe download" class="quiz-instruction hide">
+<p>To install the latest minikube <b>stable</b> release on <b>x86-64</b> <b>Windows</b> using <b>.exe download</b>:</p>
+<ol>
+<li>
+<p>Download the <a href="https://storage.googleapis.com/minikube/releases/latest/minikube-installer.exe">latest release</a>.<br>
+<br>
+Or if using <code>PowerShell</code>, use this command:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-powershell"><code class=" language-powershell" data-lang="powershell">New-Item -Path 'c:\' -Name 'minikube' -ItemType Directory -Force
+Invoke-WebRequest -OutFile 'c:\minikube\minikube.exe' -Uri 'https://github.com/kubernetes/minikube/releases/latest/download/minikube-windows-amd64.exe' -UseBasicParsing
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div></li>
+<li>
+<p>Add the binary in to your <code>PATH</code>.<br>
+<br>
+<em>Make sure to run PowerShell as Administrator.</em></p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-powershell"><code class=" language-powershell" data-lang="powershell">$oldPath = [Environment]::GetEnvironmentVariable('Path', [EnvironmentVariableTarget]::Machine)
+if ($oldPath.Split(';') -inotcontains 'C:\minikube'){ `
+  [Environment]::SetEnvironmentVariable('Path', $('{0};C:\minikube' -f $oldPath), [EnvironmentVariableTarget]::Machine) `
+}
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div><p><em>If you used a CLI to perform the installation, you will need to close that CLI and open a new one before proceeding.</em></p>
+</li>
+</ol>
+</div>
+<div data-quiz-id="/Windows/x86-64/Beta/.exe download" class="quiz-instruction hide">
+<p>To install the latest minikube <b>beta</b> release on <b>x86-64</b> <b>Windows</b> using <b>.exe download</b>:</p>
+<ol>
+<li>
+<p>Download the <a href="https://github.com/kubernetes/minikube/releases/download/v1.24.0-beta.0/minikube-installer.exe" id="latest-beta-download-link">latest beta release</a>.<br>
+<br>
+Or if using <code>PowerShell</code>, use this command:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-powershell"><code class=" language-powershell" data-lang="powershell">New-Item -Path 'c:\' -Name 'minikube' -ItemType Directory -Force
+$response = Invoke-WebRequest -Uri 'https://api.github.com/repos/kubernetes/minikube/releases' -UseBasicParsing
+$json = $response.Content | ConvertFrom-Json
+$item = ($json | ?{ $_.prerelease -eq $true })[0].assets | ?{ $_.name -eq 'minikube-windows-amd64.exe' }
+Invoke-WebRequest -Uri $item.browser_download_url -OutFile 'c:\minikube\minikube.exe' -UseBasicParsing
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div></li>
+<li>
+<p>Add the binary in to your <code>PATH</code>.<br>
+<br>
+<em>Make sure to run PowerShell as Administrator.</em></p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-powershell"><code class=" language-powershell" data-lang="powershell">$oldPath = [Environment]::GetEnvironmentVariable('Path', [EnvironmentVariableTarget]::Machine)
+if ($oldPath.Split(';') -inotcontains 'C:\minikube'){ `
+  [Environment]::SetEnvironmentVariable('Path', $('{0};C:\minikube' -f $oldPath), [EnvironmentVariableTarget]::Machine) `
+}
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div><p><em>If you used a CLI to perform the installation, you will need to close that CLI and open a new one before proceeding.</em></p>
+</li>
+</ol>
+<script type="text/javascript">
+  fetch("https://api.github.com/repos/kubernetes/minikube/releases")
+    .then(response => response.text())
+    .then(data => {
+      const u = data.match(/http.*download\/v.*beta.*\/minikube-installer\.exe/)[0]
+      document.getElementById("latest-beta-download-link").href = u;
+    })
+    .catch((error) => {
+      const el = document.getElementById("latest-beta-download-link");
+      el.innerHTML = "latest beta from the release page";
+      el.href = "https://github.com/kubernetes/minikube/releases";
+    });
+</script>
+</div>
+</div></div>
+<h2 class="step"><span class="fa-stack fa-1x"><i class="fa fa-circle fa-stack-2x"></i><strong class="fa-stack-1x text-primary">2</strong></span>Start your cluster</h2>
+<p>From a terminal with administrator access (but not logged in as root), run:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell">minikube start
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div><p>If minikube fails to start, see the <a href="https://minikube.sigs.k8s.io/docs/drivers/">drivers page</a> for help setting up a compatible container or virtual-machine manager.</p>
+<h2 class="step"><span class="fa-stack fa-1x"><i class="fa fa-circle fa-stack-2x"></i><strong class="fa-stack-1x text-primary">3</strong></span>Interact with your cluster</h2>
+<p>If you already have kubectl installed, you can now use it to access your shiny new cluster:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell">kubectl get po -A
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div><p>Alternatively, minikube can download the appropriate version of kubectl and you should be able to use it like this:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell">minikube kubectl -- get po -A
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div><p>You can also make your life easier by adding the following to your shell config:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell"><span class="token builtin class-name">alias</span> <span class="token assign-left variable">kubectl</span><span class="token operator">=</span><span class="token string">"minikube kubectl --"</span>
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div><p>Initially, some services such as the storage-provisioner, may not yet be in a Running state. This is a normal condition during cluster bring-up, and will resolve itself momentarily. For additional insight into your cluster state, minikube bundles the Kubernetes Dashboard, allowing you to get easily acclimated to your new environment:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell">minikube dashboard
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div><h2 class="step"><span class="fa-stack fa-1x"><i class="fa fa-circle fa-stack-2x"></i><strong class="fa-stack-1x text-primary">4</strong></span>Deploy applications</h2>
+<p>Create a sample deployment and expose it on port 8080:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell">kubectl create deployment hello-minikube --image<span class="token operator">=</span>k8s.gcr.io/echoserver:1.4
+kubectl expose deployment hello-minikube --type<span class="token operator">=</span>NodePort --port<span class="token operator">=</span><span class="token number">8080</span>
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div><p>It may take a moment, but your deployment will soon show up when you run:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell">kubectl get services hello-minikube
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div><p>The easiest way to access this service is to let minikube launch a web browser for you:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell">minikube <span class="token function">service</span> hello-minikube
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div><p>Alternatively, use kubectl to forward the port:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell">kubectl port-forward service/hello-minikube <span class="token number">7080</span>:8080
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div><p>Tada! Your application is now available at <a href="http://localhost:7080/">http://localhost:7080/</a>.</p>
+<p>You should be able to see the request metadata from nginx such as the <code>CLIENT VALUES</code>, <code>SERVER VALUES</code>, <code>HEADERS RECEIVED</code> and the <code>BODY</code> in the application output. Try changing the path of the request and observe the changes in the <code>CLIENT VALUES</code>. Similarly, you can do a POST request to the same and observe the body show up in <code>BODY</code> section of the output.</p>
+<h3 id="loadbalancer-deployments">LoadBalancer deployments<a aria-hidden="true" href="https://minikube.sigs.k8s.io/docs/start/#loadbalancer-deployments" style="visibility: hidden;"> <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h3>
+<p>To access a LoadBalancer deployment, use the “minikube tunnel” command. Here is an example deployment:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell">kubectl create deployment balanced --image<span class="token operator">=</span>k8s.gcr.io/echoserver:1.4  
+kubectl expose deployment balanced --type<span class="token operator">=</span>LoadBalancer --port<span class="token operator">=</span><span class="token number">8080</span>
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div><p>In another window, start the tunnel to create a routable IP for the ‘balanced’ deployment:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell">minikube tunnel
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div><p>To find the routable IP, run this command and examine the <code>EXTERNAL-IP</code> column:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell">kubectl get services balanced
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div><p>Your deployment is now available at &lt;EXTERNAL-IP&gt;:8080</p>
+<h2 class="step"><span class="fa-stack fa-1x"><i class="fa fa-circle fa-stack-2x"></i><strong class="fa-stack-1x text-primary">5</strong></span>Manage your cluster</h2>
+<p>Pause Kubernetes without impacting deployed applications:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell">minikube pause
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div><p>Unpause a paused instance:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell">minikube unpause
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div><p>Halt the cluster:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell">minikube stop
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div><p>Increase the default memory limit (requires a restart):</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell">minikube config <span class="token builtin class-name">set</span> memory <span class="token number">16384</span>
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div><p>Browse the catalog of easily installed Kubernetes services:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell">minikube addons list
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div><p>Create a second cluster running an older Kubernetes release:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell">minikube start -p aged --kubernetes-version<span class="token operator">=</span>v1.16.1
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div><p>Delete all of the minikube clusters:</p>
+<div class="highlight"><div class="code-toolbar"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4" class=" language-shell"><code class=" language-shell" data-lang="shell">minikube delete --all
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy</button></div></div></div></div><h2 id="take-the-next-step">Take the next step<a aria-hidden="true" href="https://minikube.sigs.k8s.io/docs/start/#take-the-next-step" style="visibility: hidden;"> <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h2>
+<ul>
+<li><a href="https://minikube.sigs.k8s.io/docs/handbook/">The minikube handbook</a></li>
+<li><a href="https://minikube.sigs.k8s.io/docs/tutorials/">Community-contributed tutorials</a></li>
+<li><a href="https://minikube.sigs.k8s.io/docs/commands/">minikube command reference</a></li>
+<li><a href="https://minikube.sigs.k8s.io/docs/contrib/">Contributors guide</a></li>
+<li>Take our <a href="https://forms.gle/Gg3hG5ZySw8c1C24A">fast 5-question survey</a> to share your thoughts 🙏</li>
+</ul>
+
+        
+
+
+<div class="section-index">
+    
+    
+    
+    
+    <hr class="panel-line">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    
+</div>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">Last modified November 19, 2021: <a href="https://github.com/kubernetes/minikube/commit/266a5e38e769ec7eb83f4446b1956154ae1d7839">Add macOS ARM64 Homebrew install option (266a5e38e)</a>
+</div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Slack" data-original-title="Slack">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://kubernetes.slack.com/messages/C1F5CT6Q1">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="minikube-users mailing list" data-original-title="minikube-users mailing list">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://groups.google.com/forum/#!forum/minikube-users">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="twitter" data-original-title="twitter">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://twitter.com/minikube_dev">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://github.com/kubernetes/minikube">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="minikube-dev mailing list" data-original-title="minikube-dev mailing list">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://groups.google.com/forum/#!forum/minikube-dev">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Contributing Guide" data-original-title="Contributing Guide">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://minikube.sigs.k8s.io/docs/contrib/">
+      <i class="fas fa-external-link-alt"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Project Roadmap" data-original-title="Project Roadmap">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://minikube.sigs.k8s.io/docs/contrib/roadmap/">
+      <i class="fas fa-external-link-alt"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2022 The Kubernetes Authors --  All Rights Reserved</small>
+        
+	
+		
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="./minikube start _ minikube_files/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="./minikube start _ minikube_files/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="./minikube start _ minikube_files/main.min.63db3e552bd0543be17ce4a79a18b744e9cb72256bec42b540e3ab0cd43722d0.js" integrity="sha256-Y9s+VSvQVDvhfOSnmhi3ROnLciVr7EK1QOOrDNQ3ItA=" crossorigin="anonymous"></script>
+
+
+
+<script src="./minikube start _ minikube_files/prism.js"></script>
+
+
+<script language="javascript">initTabs();</script>
+<script language="javascript">initQuiz();</script>
+
+
+
+  
+</body></html>

@@ -1,0 +1,1 @@
+https://jaceklaskowski.github.io/spark-kubernetes-book/demo/running-spark-application-on-minikube/#build-spark-application-image

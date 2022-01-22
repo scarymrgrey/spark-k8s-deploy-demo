@@ -1,0 +1,17 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /Users/kpolunin/Documents/Sources/ETL-UI/spark-k8s-setup/target/scala-2.12/spark-k8s-setup_2.12-0.1.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	index.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/kpolunin/Documents/Sources/ETL-UI/spark-k8s-setup/target/scala-2.12/classes/index.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/kpolunin/Documents/Sources/ETL-UI/spark-k8s-setup/target/scala-2.12/classes/org[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/example[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/kpolunin/Documents/Sources/ETL-UI/spark-k8s-setup/target/scala-2.12/classes/org/example[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/example/spark[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/kpolunin/Documents/Sources/ETL-UI/spark-k8s-setup/target/scala-2.12/classes/org/example/spark[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/example/spark/k8s[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/kpolunin/Documents/Sources/ETL-UI/spark-k8s-setup/target/scala-2.12/classes/org/example/spark/k8s[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/example/spark/k8s/SimpleApp.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/kpolunin/Documents/Sources/ETL-UI/spark-k8s-setup/target/scala-2.12/classes/org/example/spark/k8s/SimpleApp.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/example/spark/k8s/SimpleApp$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/kpolunin/Documents/Sources/ETL-UI/spark-k8s-setup/target/scala-2.12/classes/org/example/spark/k8s/SimpleApp$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
